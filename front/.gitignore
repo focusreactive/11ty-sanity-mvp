@@ -2,5 +2,6 @@
 *.iml
 node_modules
 dist
+_site
 .vercel
 functions/serverless
