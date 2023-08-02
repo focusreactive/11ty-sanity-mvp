@@ -1,0 +1,56 @@
+---
+layout: 'layout.njk'
+slug: 'home'
+lang: 'lat'
+---
+
+
+
+{% for pagesData in pages %}
+   {% if pagesData.slug == slug %}
+
+
+      {% for blocks in pagesData.pageContent %}
+         {% if blocks._type == "hero" %}
+            {% include '_hero.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "event" %}
+            {% include '_event.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "features" %}
+            {% include '_features.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "speakers" %}
+            {% include '_speakers.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "schedule" %}
+            {% include '_schedule-btn.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "full-ticket" %}
+            {% include '_full-ticket.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "discussions" %}
+            {% include '_discussions.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "follow-us" %}
+            {% include '_follow-us.njk' %}
+         {% endif %}
+
+         {% if blocks.component == "bars" %}
+            {% include '_bars.njk' %}
+         {% endif %}
+
+
+      {% endfor %}
+
+
+   {% endif %}
+{% endfor %}
+

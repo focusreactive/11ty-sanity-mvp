@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   {% for page in pages %}
+   {% if page.slug == slug %}
+
+   <title>Seo Title</title>
+   <meta name="description" content="this is seo description">
+
+   {% endif %}
+   {% endfor %}
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <link href="/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="bg" topmargin="0">
+   <div class="out">
+      {% include '_header.njk' %}
+      {{ content | safe }}
+      {% include '_footer.njk' %}
+
+   </div>
+</body>
+
+</html>
