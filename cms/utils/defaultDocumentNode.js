@@ -12,7 +12,7 @@ export const defaultDocumentNode = (S, {schemaType}) => {
     S.view
       .component(Iframe)
       .options({
-        url: 'http://localhost:8080/',
+        url: 'https://11ty-sanity-etkrk9nv8-focusreactive.vercel.app/',
 
         // Optional: Display the Url in the pane
         showDisplayUrl: true, // boolean. default `true`.
