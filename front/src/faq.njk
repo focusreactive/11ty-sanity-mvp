@@ -7,7 +7,7 @@ lang: 'lat'
 
 
 {% for pages in data.pages %}
-   {% if pages.slug == slug %}
+   {% if pages.slug.current == slug %}
 
 
       {% for blocks in pages.blocks %}

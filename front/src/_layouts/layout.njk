@@ -3,7 +3,7 @@
 
 <head>
    {% for page in pages %}
-   {% if page.slug == slug %}
+   {% if page.slug.current == slug %}
 
    <title>Seo Title</title>
    <meta name="description" content="this is seo description">
@@ -21,7 +21,6 @@
       {% include '_header.njk' %}
       {{ content | safe }}
       {% include '_footer.njk' %}
-
    </div>
 </body>
 
