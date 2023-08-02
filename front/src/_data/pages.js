@@ -11,6 +11,6 @@ module.exports = async () => {
 
     const data = await fetch(URL).then((res) => res.json()).catch((err) => console.error(err));
 
-    console.log(data.result[0].pageContent[0].mainLink)
+    console.log(data.result[0])
     return data.result
 }
