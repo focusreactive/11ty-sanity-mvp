@@ -7,6 +7,7 @@ const blocksToHtml = require('@sanity/block-content-to-html')
 const client = ClientObj.createClient({
 	projectId: "nzudkmke",
 	dataset: "production",
+	token: 'sk4pvS2ZY8GiQuEiYsW4eIEQ9Vgcuh1xhMnL80ch5sA3ozTtHkpJfqJItI4pyWvT2ijrE2Mlszuee9hPTlTq0U3yy54jTcdPohzqms00vxfzIpzOFqdOOtuMSTAiUEFaVa2i3XVjUpLxIPjclRbCqxM0d85dqv7cigcTOiTEC2jsYfYLRt3w',
 	useCdn: true,
 });
 
