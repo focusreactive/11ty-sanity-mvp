@@ -22,6 +22,18 @@
       {{ content | safe }}
       {% include '_footer.njk' %}
    </div>
+
+   {% if eleventy.serverless.query.slug %}
+    <script>
+    (function(){
+         var source = new EventSource("https://nzudkmke.api.sanity.io/v2021-06-07/data/listen/production?query=*[slug.current == '{{ eleventy.serverless.query.slug }}']", {withCredentials: true});
+         source.addEventListener("mutation", e => {
+            location.reload(true)
+         })
+
+    })()
+    </script>
+   {% endif %}
 </body>
 
 </html>

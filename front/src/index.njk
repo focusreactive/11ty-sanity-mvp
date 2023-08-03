@@ -1,15 +1,21 @@
 ---
 layout: 'layout.njk'
-slug: 'home'
-lang: 'lat'
+lang: 'en'
+
+pagination:
+  data: pages
+  size: 1
+  alias: sanityData
+
+permalink:
+    build: "/{{sanityData.slug.current}}/"
+    serverless: '/dynamic'
 ---
 
 
 
 {% for pagesData in pages %}
-   {% if pagesData.slug.current == slug %}
-
-
+   {% if pagesData.slug.current == sanityData.slug.current %}
       {% for blocks in pagesData.pageContent %}
          {% if blocks._type == "hero" %}
             {% include '_hero.njk' %}
@@ -46,11 +52,7 @@ lang: 'lat'
          {% if blocks.component == "bars" %}
             {% include '_bars.njk' %}
          {% endif %}
-
-
       {% endfor %}
-
-
    {% endif %}
 {% endfor %}
 
