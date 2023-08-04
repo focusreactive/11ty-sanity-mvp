@@ -21,35 +21,35 @@ permalink:
             {% include '_hero.njk' %}
          {% endif %}
 
-         {% if blocks.component == "event" %}
+         {% if blocks._type == "event" %}
             {% include '_event.njk' %}
          {% endif %}
 
-         {% if blocks.component == "features" %}
+         {% if blocks._type == "features" %}
             {% include '_features.njk' %}
          {% endif %}
 
-         {% if blocks.component == "speakers" %}
+         {% if blocks._type == "speakers" %}
             {% include '_speakers.njk' %}
          {% endif %}
 
-         {% if blocks.component == "schedule" %}
+         {% if blocks._type == "schedule" %}
             {% include '_schedule-btn.njk' %}
          {% endif %}
 
-         {% if blocks.component == "full-ticket" %}
+         {% if blocks._type == "fullTicket" %}
             {% include '_full-ticket.njk' %}
          {% endif %}
 
-         {% if blocks.component == "discussions" %}
+         {% if blocks._type == "discussions" %}
             {% include '_discussions.njk' %}
          {% endif %}
 
-         {% if blocks.component == "follow-us" %}
+         {% if blocks._type == "followUs" %}
             {% include '_follow-us.njk' %}
          {% endif %}
 
-         {% if blocks.component == "bars" %}
+         {% if blocks._type == "bars" %}
             {% include '_bars.njk' %}
          {% endif %}
       {% endfor %}

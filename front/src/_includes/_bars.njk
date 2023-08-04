@@ -9,12 +9,12 @@
       <div class="bars-list">
          {% for bar in blocks.list %}
          <div class="bars-list__item">
-           
+
             <div class="bars-list__content">
             <p class="bars-list__bar">{{bar.title}}</p>
             <p class="bars-list__name">{{bar.text}}</p>
             <div class="bars-list__rooms">
-               <a class="bars-list__btn btn btn--transparent" >{{bar.btnText}}</a>
+               <a class="bars-list__btn btn btn--transparent" >{{bar.link.title}}</a>
             </div>
             </div>
          </div>

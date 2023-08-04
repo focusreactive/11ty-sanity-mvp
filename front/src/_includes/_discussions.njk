@@ -3,13 +3,13 @@
    <h3 class="section__title">
       {{blocks.title}}
    </h3>
-   
+
    <div class="video-rooms">
       {% for rooms in blocks.videoRooms %}
       <div class="video-rooms__item ">
          <div class="video-rooms__img-wrap">
          <picture>
-            <img src="{{rooms.icon}}" class="video-rooms__img" alt="">
+            <img src="{{rooms.icon|imgURL}}" class="video-rooms__img" alt="">
          </picture>
          </div>
          <h4 class="video-rooms__title">{{rooms.title}}</h4>
@@ -18,7 +18,7 @@
                {% for speaker in rooms.speakers %}
                   <div class="video-rooms__user">
                      <picture>
-                        <img src="{{speaker.img}}" class="video-rooms__avatar" alt="{{speaker.name}}">
+                        <img src="{{speaker.avatar|imgURL}}" class="video-rooms__avatar" alt="{{speaker.name}}">
                      </picture>
                      <p class="video-rooms__name">{{speaker.name}}</p>
                   </div>
@@ -27,6 +27,6 @@
          {% endif %}
       </div>
       {% endfor %}
-   
+
    </div>
 </section>

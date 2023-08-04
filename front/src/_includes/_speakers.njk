@@ -6,29 +6,29 @@
    <div class="speakers-list">
       {% for speaker in blocks.speakers %}
       <div class="speakers-list__item">
-         
+
          <div class="speaker">
             <div class="speaker__photo">
                <picture>
-                  <img src="{{speaker.avatar}}" alt="">
+                  <img src="{{speaker.avatar|imgURL}}" alt="">
                </picture>
             </div>
             <div class="speaker__name">{{speaker.name}}</div>
             <div class="speaker__company">{{speaker.company}}</div>
-            <div class="speaker__talk">{{speaker.talk}}</div>
+            <div class="speaker__talk">{{speaker.talk|blockContent}}</div>
             <div class="speaker__desc">
-               {{speaker.text}}
+               {{speaker.text|blockContent}}
             </div>
          </div>
-        
+
       </div>
        {% endfor %}
 
-      {% if blocks.cfp %}
+      {% if blocks.ctaLink %}
       <div class="speakers-list__item speakers-list__item_cfp">
-         <p class="speaker__name">{{blocks.cfp.title}}</p>
+         <p class="speaker__name">{{blocks.ctaTitle}}</p>
          <p class="speaker__company">
-         </p><p><a href="{{blocks.cfp.link.url}}">{{blocks.cfp.link.text}}</a></p>
+         </p><p><a href="{{blocks.ctaLink.url}}">{{blocks.ctaLink.title}}</a></p>
          <p></p>
       </div>
       {% endif %}
