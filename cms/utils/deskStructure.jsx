@@ -1,31 +1,16 @@
-import React, {useCallback, useEffect, useState} from 'react'
-import {createClient} from '@sanity/client'
+import React, {useCallback, useEffect} from 'react'
 import debounce from 'lodash.debounce'
 
-const client = createClient({
-  projectId: 'nzudkmke',
-  dataset: 'production',
-  token:
-    'sk4pvS2ZY8GiQuEiYsW4eIEQ9Vgcuh1xhMnL80ch5sA3ozTtHkpJfqJItI4pyWvT2ijrE2Mlszuee9hPTlTq0U3yy54jTcdPohzqms00vxfzIpzOFqdOOtuMSTAiUEFaVa2i3XVjUpLxIPjclRbCqxM0d85dqv7cigcTOiTEC2jsYfYLRt3w',
-  useCdn: false,
-})
+const sendPostMessage = () => {
+  console.log('sendPostMessage')
 
-function useForceUpdate() {
-  const [value, setValue] = useState(0)
-
-  return {
-    trigger: () => {
-      setTimeout(() => {
-        setValue((value) => value + 1)
-      }, 1500)
-    },
-    value,
-  }
+  document
+    .getElementById('preview_iframe')
+    .contentWindow.postMessage('reload()', 'https://11ty-sanity-mvp.vercel.app')
 }
 
 const JsonPreview = ({document: sanityDocument}) => {
-  const {trigger, value} = useForceUpdate()
-  const debouncedChangeHandler = useCallback(debounce(trigger, 1500), [])
+  const debouncedChangeHandler = useCallback(debounce(sendPostMessage, 1000), [])
 
   useEffect(() => {
     if (debouncedChangeHandler) {
@@ -37,7 +22,6 @@ const JsonPreview = ({document: sanityDocument}) => {
     <iframe
       title="page"
       id="preview_iframe"
-      key={value}
       src={`https://11ty-sanity-mvp.vercel.app/api/preview?slug=${sanityDocument.displayed?.slug?.current}`}
       style={{height: '100%', width: '100%'}}
     />
