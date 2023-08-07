@@ -1,7 +1,7 @@
 {
   "functions": {
-    "front/api/preview/[slug].js": {
-      "includeFiles": "front/functions/**"
+    "api/preview/index.js": {
+      "includeFiles": "functions/**"
     }
   }
 }
