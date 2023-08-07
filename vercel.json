@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/preview/[slug].js": {
+    "front/api/preview/[slug].js": {
       "includeFiles": "front/functions/**"
     }
   }
