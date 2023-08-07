@@ -56,7 +56,7 @@
          const searchParams2 = new URLSearchParams({query: rawQuery2}).toString();
 
          const myFunction = () => {
-            setTimeout(function(){ location.reload(true); }, 2000);
+            setTimeout(function(){ location.reload(true); }, 0);
          }
 
          const listener = throttle(myFunction, 1500);
@@ -64,7 +64,7 @@
          source.addEventListener("mutation", listener)
 
          const myFunction2 = () => {
-            setTimeout(function(){ location.reload(true); }, 2000);
+            setTimeout(function(){ location.reload(true); }, 0);
          }
 
          const listener2 = throttle(myFunction2, 1500);
