@@ -2,7 +2,7 @@ import React from "react"
 
 const JsonPreview = ({ document }) => {
     console.log(document)
-    return <iframe title='page' src={`http://localhost:3000/dynamic?slug=${document.displayed?.slug?.current}`} style={{height: '100%', width: '100%'}} />
+    return <iframe title='page' src={`https://11ty-sanity-mvp.vercel.app/api/preview?slug=${document.displayed?.slug?.current}`} style={{height: '100%', width: '100%'}} />
 }
 export const defaultDocumentNodeResolver = (S) =>
     S.document().views([
