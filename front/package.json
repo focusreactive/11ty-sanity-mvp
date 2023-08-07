@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "script.js",
 	"scripts": {
-		"start": "eleventy --serve",
+		"start": "eleventy --serve --port=3000",
 		"build": "eleventy"
 	},
 	"keywords": [],
